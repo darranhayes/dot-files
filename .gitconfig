@@ -1,0 +1,49 @@
+[include]
+	path = ~/.gitconfig.local
+
+#define [user] name & email properties in .gitconfig.local
+
+[alias]
+	alias-list = config --get-regexp alias
+	show-list = show --stat
+	diff-list = diff --stat
+
+	branches = branch -a
+	branch-name = !git branch --show-current
+	orphans = !git branch -vv | grep gone
+	ls-excluded = ls-files -o -i --exclude-standard --directory
+	ls-untracked = ls-files -o --directory
+	
+	commend = commit --amend --no-edit
+	squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+
+	logs = log --graph --pretty=format:'%C(red)%h%C(reset) - %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)%C(yellow)%d%C(reset) %C(cyan)[%p]%C(reset)' --abbrev-commit -25 --all
+    flogs = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)%C(yellow)%d%C(reset) %C(cyan)[%p]%C(reset)' --abbrev-commit -25 --first-parent
+
+	rbs = !git pull --rebase --autostash --ff && git status
+	sha = rev-parse --short
+
+[core]
+	preloadindex = true
+	commentChar = *
+	editor = vi
+
+[push]
+	default = simple
+
+[status]
+	submoduleSummary = false
+
+[merge]
+	ff = true
+	tool = bc
+[diff]
+	tool = bc
+ 
+[mergetool "bc"] #define [mergetool "bc] path property in .gitconfig.local
+[difftool "bc"]  #define [difftool "bc] path  property in .gitconfig.local
+
+[credential]
+	helper = manager
+[init]
+	defaultBranch = main
