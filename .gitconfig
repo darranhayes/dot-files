@@ -29,7 +29,7 @@
 	editor = vi
 
 [push]
-	default = simple
+	default = current
 
 [status]
 	submoduleSummary = false
