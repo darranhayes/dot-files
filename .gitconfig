@@ -13,7 +13,8 @@
 	orphans = !git branch -vv | grep gone
 	ls-excluded = ls-files -o -i --exclude-standard --directory
 	ls-untracked = ls-files -o --directory
-	
+
+	track = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 	commend = commit --amend --no-edit
 	squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
 
