@@ -18,8 +18,8 @@
 	commend = commit --amend --no-edit
 	squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
 
-	logs = log --graph --pretty=format:'%C(red)%h%C(reset) - %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)%C(yellow)%d%C(reset) %C(cyan)[%p]%C(reset)' --abbrev-commit -25 --all
-    flogs = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)%C(yellow)%d%C(reset) %C(cyan)[%p]%C(reset)' --abbrev-commit -25 --first-parent
+	logs = log --graph --pretty=format:'%C(red)%h%C(reset) - %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)%C(yellow)%d%C(reset) %C(cyan)[%p]%C(reset)' --decorate=full  --abbrev-commit -25 --all
+	flogs = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)%C(yellow)%d%C(reset) %C(cyan)[%p]%C(reset)' --decorate=full --abbrev-commit -25 --first-parent
 
 	rbs = !git pull --rebase --autostash --ff && git status
 	sha = rev-parse --short
