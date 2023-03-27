@@ -29,6 +29,7 @@
 	commentChar = *
 	editor = vi
 
+	quotepath = off
 [push]
 	default = current
 
