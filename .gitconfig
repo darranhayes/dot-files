@@ -9,8 +9,13 @@
 	diff-list = diff --stat
 
 	branches = branch -a
-	branch-name = !git branch --show-current
+	branch-name = branch --show-current
+	branch-parents = show-branch --list
 	orphans = !git branch -vv | grep gone
+	
+	mergediff = "!f(){ branch=\"$1\" ; into=\"$2\" ; git merge-tree $(git merge-base \"$branch\" \"$into\") \"$into\" \"$branch\" ; };f "
+	mergetest = "!f(){ git mergediff $@ | sed -ne \"/^+<<</,/^+>>>/ p\" ; };f "
+	
 	ls-excluded = ls-files -o -i --exclude-standard --directory
 	ls-untracked = ls-files -o --directory
 
@@ -28,8 +33,14 @@
 	preloadindex = true
 	commentChar = *
 	editor = vi
-
 	quotepath = off
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true
+
 [push]
 	default = current
 
