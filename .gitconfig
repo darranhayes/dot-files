@@ -1,7 +1,7 @@
 [include]
 	path = ~/.gitconfig.local
 
-#define [user] name & email properties in .gitconfig.local
+# set [user] name & email properties in .gitconfig.local
 
 [alias]
 	alias-list = config --get-regexp alias
@@ -15,6 +15,7 @@
 
 	show-list = show --stat
 	diff-list = diff --stat
+	dft = difftool
 
 	unstage = reset
 	unstage-file = !git reset -- $1
@@ -53,15 +54,14 @@
 [status]
 	submoduleSummary = false
 
-[merge]
-	ff = true
-	tool = bc
-[diff]
-	tool = bc
- 
-[mergetool "bc"] #define [mergetool "bc] path property in .gitconfig.local
-[difftool "bc"]  #define [difftool "bc] path  property in .gitconfig.local
+# set [diff] and [merge] in .gitconfig.local file
 
+[difftool]
+	prompt = false
+
+[pager]
+	difftool = true
+		
 [credential]
 	helper = manager
 [init]

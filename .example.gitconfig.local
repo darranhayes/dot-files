@@ -1,0 +1,20 @@
+[user]
+	email = {emailaddress}
+	name = {name}
+
+[merge]
+	ff = true
+	tool = bc
+
+[diff]
+	tool = difftastic
+
+[mergetool "bc"]
+	path = "C:\\Program Files\\Beyond Compare 4\\bcomp.exe"
+
+[difftool "bc"]
+	path = "C:\\Program Files\\Beyond Compare 4\\bcomp.exe"
+
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+
