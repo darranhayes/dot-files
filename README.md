@@ -1,4 +1,4 @@
-# My common dot files and shell scripts used for bash, vim, and git
+# My common configuration files for bash, git, and vim
 
 ## Setup dot-files
 Clone this repo:
@@ -16,13 +16,11 @@ Git-bash
 ```
 
 > [!NOTE]
-> On Windows, symbolic linking (link-dotfiles.sh) requires a local security policy permission to be added:
+> On Windows, the symbolic linking option (-l) requires a local security policy permission to be added before running the dotfiles.sh script:
 >
-> - Run "Local Security Policies" from Windows Start
+> - Run "Local Security Policy" as Administrator 
 > - Local Policies / User Rights Assignment / Create symbolic links
 > - Log in again to apply new policy
->
-> Alternatively, use copy-dotfiles.sh or copy-dotfiles.bat
 
 ## Remove dot-files
 The copied files can be removed from your home folder with:
