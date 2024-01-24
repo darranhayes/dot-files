@@ -1,25 +1,33 @@
 # My common dot files and shell scripts used for bash, vim, and git
 
-Clone this repo to, e.g., ~/src/DotFiles/ and then copy or symlink the repo files to ~
-
-```bash
-ln -s ~/src/DotFiles/.bashrc ~/.bashrc
-ln -s ~/src/DotFiles/.gitconfig ~/.gitconfig
-ln -s ~/src/DotFiles/.inputrc ~/.inputrc
-ln -s ~/src/DotFiles/.vimrc ~/.vimrc
-ln -s ~/src/DotFiles/git-prompt.sh ~/git-prompt.sh
-ln -s ~/src/DotFiles/better-git-branch.sh ~/better-git-branch.sh
-
-cp ~/src/DotFiles/.bashrc ~/.bashrc
-cp ~/src/DotFiles/.gitconfig ~/.gitconfig
-cp ~/src/DotFiles/.inputrc ~/.inputrc
-cp ~/src/DotFiles/.vimrc ~/.vimrc
-cp ~/src/DotFiles/git-prompt.sh ~/git-prompt.sh
-cp ~/src/DotFiles/better-git-branch.sh ~/better-git-branch.sh
-```
-
-On windows, git bash requires admin rights and correct configuration for setting symlinks correctly. My ConEmu task is configured as
+## Setup dot-files
+Clone this repo:
 
 ```
-set "PATH=%ConEmuDir%\..\Git\usr\bin;%PATH%" & set "MSYS=winsymlinks:nativestrict" & %ConEmuDir%\..\Git\git-cmd.exe --no-cd --command=%ConEmuBaseDirShort%\conemu-msys2-64.exe /usr/bin/bash.exe -l -i -new_console:a
+git clone https://github.com/darranhayes/dot-files.git
+```
+
+From the dot-files folder, run one of the following scripts:
+
+Git-bash
+```
+./dotfiles.sh -c ~ # to copy the files directly to the user folder
+./dotfiles.sh -l ~ # to symbolically link from the repository files to the user folder
+```
+
+> [!NOTE]
+> On Windows, symbolic linking (link-dotfiles.sh) requires a local security policy permission to be added:
+>
+> - Run "Local Security Policies" from Windows Start
+> - Local Policies / User Rights Assignment / Create symbolic links
+> - Log in again to apply new policy
+>
+> Alternatively, use copy-dotfiles.sh or copy-dotfiles.bat
+
+## Remove dot-files
+The copied files can be removed from your home folder with:
+
+Git-bash
+```
+./dotfiles.sh -r ~
 ```
