@@ -5,6 +5,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export LC_ALL="C.UTF-8" #either set LC_ALL or customise with LANG & LC_COLLATE
 export LANG='C.UTF-8'
+export GREP_COLOR='1;37;41'
 
 set -o vi
 
@@ -13,3 +14,5 @@ alias treef='tree.com //a //f'
 alias ls='ls -a --classify --color --group-directories-first'
 alias base='basename "$PWD"'
 alias cpwd='PWD | clip'
+alias search='find -name'
+alias grep='grep --color=auto'
