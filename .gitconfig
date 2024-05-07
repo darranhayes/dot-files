@@ -3,6 +3,9 @@
 
 # set [user] name & email properties in .gitconfig.local
 
+[help]
+	autocorrect = 15 
+
 [alias]
 	alias-list = config --get-regexp alias
 
