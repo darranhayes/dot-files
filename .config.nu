@@ -28,15 +28,20 @@ def install_plugin [plugin_name: string, git_repository_url?: string, git_tag?: 
     nu -c $"register ($plugin_path)"
 }
 
+### BEGIN oh-my-post
 source ~\Src\clones\nu_scripts\modules\prompt\oh-my.nu
 $env.PROMPT_COMMAND = { (git_prompt).left_prompt }
 $env.PROMPT_COMMAND_RIGHT = "" # { (git_prompt).right_prompt }
 $env.PROMPT_INDICATOR = " "
+### END oh-my-post
 
 source ~\.cache\carapace\init.nu
 
 source ~\Src\clones\nu_scripts\custom-completions\git\git-completions.nu
 source ~\Src\clones\nu_scripts\modules\git\git_branch_age.nu
 source ~\Src\clones\nu_scripts\modules\random-list\random-list.nu
-# source ~\Src\clones\nu_scripts\modules\to-json-schema\to-json-schema.nu
 source ~\Src\clones\nu_scripts\modules\maths\math_functions.nu
+
+### BEGIN defer until bugs fixed
+# source ~\Src\clones\nu_scripts\modules\to-json-schema\to-json-schema.nu
+### END defer until bugs fixed

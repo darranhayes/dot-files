@@ -14,7 +14,7 @@ Help()
 }
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-FILES=(".bashrc" ".example.gitconfig.local" ".gitconfig" ".inputrc" ".vimrc" "better-git-branch.sh" "git-prompt.sh" "RefreshEnv.bat")
+FILES=(".bashrc" ".example.gitconfig.local" ".gitconfig" ".inputrc" ".vimrc" "better-git-branch.sh" "git-prompt.sh" "RefreshEnv.bat" ".config.nu" "env.nu")
 
 LinkFiles()
 {
